@@ -39,8 +39,8 @@ namespace Sol_InMemoryCache.Controllers
             if(!memoryCache.TryGetValue<string>("timeStamp",out timeStamp))
             {
                 options.Priority = CacheItemPriority.Normal;
-                options.AbsoluteExpiration = DateTime.Now.AddMinutes(1);
-                options.SlidingExpiration = TimeSpan.FromMinutes(1);
+                options.AbsoluteExpiration = DateTime.Now.AddSeconds(5);
+                options.SlidingExpiration = TimeSpan.FromSeconds(5);
                 options.RegisterPostEvictionCallback(MyCallBack, this);
 
                 timeStamp =
