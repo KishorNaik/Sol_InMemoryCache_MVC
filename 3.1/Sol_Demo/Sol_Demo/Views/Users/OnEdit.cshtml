@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "OnEdit";
+}
+@model Sol_Demo.ViewModels.UserViewModel
+<h1>OnEdit</h1>
+
+<form asp-controller="Users" asp-action="OnUpdate">
+    <input type="hidden" asp-for="@Model.Users.Id" />
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label>First Name :</label>
+                    <input id="txtFirstName" type="text" class="form-control" asp-for="@Model.Users.FirstName" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label>Last Name :</label>
+                    <input id="txtLastName" type="text" class="form-control" asp-for="@Model.Users.LastName" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <input type="submit" class="btn btn-danger" value="Submit"/>
+            </div>
+        </div>
+    </div>
+</form>
+

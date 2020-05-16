@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model Sol_Demo.ViewModels.UserViewModel
+
+<h1>Demo</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div>Total Load Time : @ViewBag.TotalLoadTime</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var userModel in Model.UserList)
+                    {
+                        <tr>
+                            <td>@userModel.Id</td>
+                            <td>@userModel.FirstName</td>
+                            <td>@userModel.LastName</td>
+                            <td>
+                                <a asp-controller="Users" asp-action="OnEdit" asp-route-id="@userModel.Id">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
